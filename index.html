@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio Misbaqul Diky</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+    }
+
+    .zoomed {
+      transform: scale(2.5);
+      transition: transform 0.3s ease-in-out;
+      z-index: 50;
+      position: relative;
+    }
+
+    .neon-border span {
+      position: absolute;
+      display: block;
+    }
+
+    .neon-border span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: anim1 1s linear infinite;
+    }
+
+    .neon-border span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: anim2 1s linear infinite;
+      animation-delay: .25s;
+    }
+
+    .neon-border span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #03e9f4);
+      animation: anim3 1s linear infinite;
+      animation-delay: .5s;
+    }
+
+    .neon-border span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: anim4 1s linear infinite;
+      animation-delay: .75s;
+    }
+
+    @keyframes anim1 {
+      0% { left: -100%; }
+      50%,100% { left: 100%; }
+    }
+
+    @keyframes anim2 {
+      0% { top: -100%; }
+      50%,100% { top: 100%; }
+    }
+
+    @keyframes anim3 {
+      0% { right: -100%; }
+      50%,100% { right: 100%; }
+    }
+
+    @keyframes anim4 {
+      0% { bottom: -100%; }
+      50%,100% { bottom: 100%; }
+    }
+
+    ul.custom-list {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    ul.custom-list li {
+      margin-bottom: 0.75rem;
+    }
+
+    ul.custom-list li span {
+      display: inline-block;
+      text-indent: -1.5rem;
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-[#0a1a2f] text-white relative">
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center text-center space-y-6 px-4 py-10 z-10">
+      
+          <div class="relative w-64 h-64 rounded-full overflow-hidden animate__animated animate__fadeInDown">
+      <!-- Gambar Profil -->
+      <img 
+        id="foto" 
+        src="profil.jpg"
+        alt="Foto Anda"
+        class="w-full h-full object-cover rounded-full z-10 relative hover:cursor-pointer transition duration-300"
+      />
+
+      <!-- Neon Border Overlay -->
+      <div class="absolute inset-0 neon-border pointer-events-none z-20">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+      <h1 class="text-3xl sm:text-4xl font-bold animate__animated animate__fadeInUp">
+        Halo, Saya Diky Kurniawan
+      </h1>
+
+      <p class="text-base sm:text-lg text-gray-50 animate__animated animate__fadeInUp max-w-3xl leading-relaxed">
+        Saya adalah mahasiswa di bidang Sistem Teknologi Informasi yang memiliki semangat tinggi untuk mengembangkan solusi teknologi yang efisien dan inovatif. Dengan pengalaman pengelolaan dan pengembangan sistem informasi, pemrograman, serta analisis data, saya berkomitmen untuk terus belajar dan berkembang dalam dunia teknologi yang dinamis ini.
+      </p>
+
+      <button 
+        onclick="document.getElementById('cv').scrollIntoView({ behavior: 'smooth' })"
+        class="bg-blue-600 hover:bg-blue-700 px-6 py-3 text-white rounded-md transition duration-300 animate__animated animate__zoomIn"
+      >
+        Lihat Data Pribadi
+      </button>
+    </section>
+
+
+    <!-- CV & Riwayat Hidup -->
+    <section id="cv" class="bg-gray-100 text-black py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold">Curriculum Vitae</h2>
+        <p class="text-gray-600">Sekilas tentang latar belakang dan pengalaman saya</p>
+      </div>
+      
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-6 fade-observe">
+        
+        <!-- Data Pribadi -->
+        <div class="bg-white rounded-xl shadow-xl p-8 border-l-4 border-blue-500 hover:shadow-2xl transition duration-300">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-600">👤 Data Pribadi</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Nama:</strong> Misbaqul Diky Kurniawan</li>
+            <li><strong>Email:</strong> dikykurnia089@gmail.com</li>
+            <li><strong>Alamat:</strong> Kec. Ngusikan, Kab. Jombang</li>
+            <li><strong>No. HP:</strong> +62 858 0725 3990</li>
+            <li><strong>Profesi:</strong> Web Development</li>
+            <li><strong>Profil:</strong> Mahasiswa dengan semangat tinggi dalam mengembangkan solusi teknologi yang efisien dan inovatif.</li>
+          </ul>
+        </div>
+        
+        <!-- Riwayat Hidup -->
+        <div class="bg-white rounded-xl shadow-xl p-8 border-l-4 border-green-500 hover:shadow-2xl transition duration-300">
+          <h3 class="text-2xl font-semibold mb-4 text-green-600">📜 Riwayat Hidup</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>2019 - Sekarang:</strong> Mahasiswa STI - UNWAHA</li>
+            <li><strong>2021 - Sekarang:</strong> Pengembang aplikasi klinik & janji temu</li>
+            <li><strong>Keahlian:</strong> 
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2 mt-1">HTML</span>
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2 mt-1">CSS</span>
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2 mt-1">JavaScript</span>
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2 mt-1">PHP</span>
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2 mt-1">MySQL</span>
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2 mt-1">CodeIgniter</span>
+              <span class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mt-1">Git</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projek -->
+    <section class="bg-gray-100 text-black py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold border-b-4 border-blue-500 inline-block pb-2">Projek Saya</h2>
+        <p class="text-gray-600 mt-2">Beberapa hasil karya dalam pengembangan aplikasi dan website.</p>
+      </div>
+
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 fade-observe">
+        
+        <!-- Project 1 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 overflow-hidden">
+          <img onclick="showImage(this)" src="gambar1.png" alt="Proyek 1" class="cursor-zoom-in w-full h-48 object-cover hover:scale-105 transition duration-300">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-blue-600 mb-2">Aplikasi Manajemen Klinik</h3>
+            <p class="text-gray-700 text-sm mb-3">Sistem untuk mengelola data pasien, antrian, dan pembayaran klinik.</p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">PHP</span>
+              <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">MySQL</span>
+              <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">CI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 overflow-hidden">
+          <img onclick="showImage(this)" src="gambar2.jpg" alt="Proyek 2" class="cursor-zoom-in w-full h-48 object-cover hover:scale-105 transition duration-300">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-green-600 mb-2">Janji Temu QR-Code</h3>
+            <p class="text-gray-700 text-sm mb-3">Validasi otomatis janji temu berbasis QR-CODE.</p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="bg-green-100 text-green-800 px-2 py-1 rounded">JavaScript</span>
+              <span class="bg-green-100 text-green-800 px-2 py-1 rounded">QR API</span>
+              <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Tailwind</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 overflow-hidden">
+          <img onclick="showImage(this)" src="gambar3.jpg" alt="Proyek 3" class="cursor-zoom-in w-full h-48 object-cover hover:scale-105 transition duration-300">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-purple-600 mb-2">Toko Online Griyo Pos</h3>
+            <p class="text-gray-700 text-sm mb-3">Toko online dengan fitur katalog, keranjang, dan transaksi otomatis.</p>
+            <div class="flex flex-wrap gap-2 text-sm">
+              <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Laravel</span>
+              <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Midtrans</span>
+              <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Responsive</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Fullscreen Image Modal -->
+      <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+        <img id="modalImage" src="" class="max-w-full max-h-full rounded-lg shadow-lg">
+        <button onclick="hideImage()" class="absolute top-4 right-6 text-white text-3xl font-bold">&times;</button>
+      </div>
+    </section>
+
+    <!-- Tambahan Portofolio -->
+    <section id="tambahan" class="bg-gray-100 text-black py-20 min-h-screen">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold border-b-4 border-indigo-500 inline-block pb-2">Informasi Tambahan</h2>
+        <p class="text-gray-600 mt-2">Berikut beberapa informasi tambahan tentang saya yang mencerminkan karakter dan tujuan saya.</p>
+      </div>
+
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 fade-observe">
+        <!-- Box 1 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-6">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-3">👨‍🎓 Karakter Pribadi</h4>
+          <ul class="list-disc list-outside pl-6 text-sm text-gray-700 space-y-2">
+            <li>Saya adalah individu yang menjunjung tinggi kedisiplinan dan tanggung jawab dalam setiap pekerjaan yang saya jalani, baik dalam tim maupun secara individu.</li>
+            <li>Mudah beradaptasi dengan lingkungan baru serta cepat dalam memahami sistem kerja atau teknologi yang belum familiar.</li>
+            <li>Mampu mengelola waktu dengan efektif dan bekerja di bawah tekanan tanpa mengurangi kualitas hasil kerja.</li>
+            <li>Memiliki integritas tinggi dan selalu berusaha menyelesaikan tugas dengan penuh dedikasi dan konsistensi.</li>
+          </ul>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-6">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-3">🧠 Soft Skills</h4>
+          <ul class="list-disc list-outside pl-6 text-sm text-gray-700 space-y-2">
+            <li>Memiliki kemampuan komunikasi yang efektif, baik secara lisan maupun tulisan, serta mampu menyampaikan ide dengan jelas.</li>
+            <li>Terbiasa bekerja dalam tim dan mampu berkolaborasi secara aktif untuk mencapai tujuan bersama.</li>
+            <li>Kreatif dan analitis dalam menghadapi permasalahan, khususnya dalam menyusun solusi teknis dan logis.</li>
+            <li>Kemampuan manajemen waktu yang baik, sehingga pekerjaan dapat diselesaikan secara efisien dan tepat waktu.</li>
+          </ul>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-6">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-3">💡 Minat & Fokus</h4>
+          <ul class="list-disc list-outside pl-6 text-sm text-gray-700 space-y-2">
+            <li>Sangat tertarik dalam pengembangan aplikasi berbasis web dan mobile yang bermanfaat untuk masyarakat luas.</li>
+            <li>Fokus dalam bidang UI/UX untuk menciptakan pengalaman pengguna yang intuitif dan menarik.</li>
+            <li>Memiliki ketertarikan dalam bidang keamanan siber, terutama dalam penerapan praktik coding yang aman dan efisien.</li>
+            <li>Berkomitmen untuk terus mengembangkan diri dalam pemrograman backend dan frontend, serta pengelolaan database.</li>
+          </ul>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-6">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-3">🎯 Tujuan Karier</h4>
+          <ul class="list-disc list-outside pl-6 text-sm text-gray-700 space-y-2">
+            <li>Menjadi seorang Web Developer profesional yang mampu membangun sistem yang efisien, user-friendly, dan memiliki nilai guna tinggi.</li>
+            <li>Terus belajar dan beradaptasi dengan perkembangan teknologi informasi yang dinamis dan cepat berubah.</li>
+            <li>Berpartisipasi aktif dalam proyek-proyek digital yang berdampak positif untuk masyarakat dan dunia industri.</li>
+            <li>Mengembangkan startup atau platform digital yang bisa menjadi solusi terhadap masalah yang ada di masyarakat.</li>
+          </ul>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-6">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-3">📚 Hobi & Aktivitas</h4>
+          <ul class="list-disc list-outside pl-6 text-sm text-gray-700 space-y-2">
+            <li>Menulis artikel seputar teknologi, coding, dan pengembangan web di blog pribadi sebagai sarana berbagi dan dokumentasi pengetahuan.</li>
+            <li>Aktif dalam mengikuti event coding seperti hackathon, webinar teknologi, dan pelatihan daring untuk menambah wawasan dan koneksi.</li>
+            <li>Mengikuti komunitas teknologi di media sosial maupun platform belajar seperti GitHub, Stack Overflow, dan forum diskusi lainnya.</li>
+            <li>Menjelajahi teknologi baru secara otodidak, terutama framework modern dan tools pendukung pengembangan aplikasi.</li>
+          </ul>
+        </div>
+
+        <!-- Box 6 -->
+        <div class="bg-white rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 p-6">
+          <h4 class="text-xl font-semibold text-indigo-600 mb-3">⚙️ Tools & Teknologi</h4>
+          <ul class="list-disc list-outside pl-6 text-sm text-gray-700 space-y-2">
+            <li>Visual Studio Code sebagai editor utama dalam proses pengembangan web dan aplikasi.</li>
+            <li>Git & GitHub untuk version control dan kolaborasi proyek secara tim maupun individu.</li>
+            <li>Figma untuk membuat desain antarmuka yang menarik dan responsif sesuai prinsip UI/UX.</li>
+            <li>Postman untuk pengujian API dan memastikan integrasi antara frontend dan backend berjalan lancar.</li>
+            <li>Terbiasa menggunakan framework seperti Bootstrap, Tailwind CSS, CodeIgniter, dan Laravel dalam proyek pengembangan.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Salju -->
+    <div id="snow" class="fixed w-full h-full pointer-events-none z-0"></div>
+
+    <!-- Hero Section untuk Profil Saya -->
+    <section class="relative bg-[#0a1a2f] min-h-[80vh] flex flex-col justify-center items-center text-center space-y-6 p-10 text-white">
+      <h2 class="text-4xl font-bold text-indigo-700">Tentang Saya</h2>
+      <p class="max-w-3xl text-lg leading-relaxed">
+        Halo! Saya adalah seorang pengembang web yang memiliki semangat tinggi dalam menciptakan solusi digital yang bermanfaat.
+        Saya memiliki keahlian dalam pengembangan web menggunakan teknologi seperti HTML, CSS, JavaScript, PHP, dan framework seperti CodeIgniter.
+        Selain itu, saya aktif mengembangkan sistem manajemen klinik berbasis website sebagai bagian dari kontribusi saya terhadap dunia kesehatan digital.
+      </p>
+      <div class="mt-6 space-y-2 text-base text-white">
+        <p><strong>Nama:</strong> Misbaqhul Diky Kurniawan<p>
+        <p><strong>Bidang:</strong> Web Development</p>
+        <p><strong>Email:</strong> dikykurnia089@gmail.com</p>
+        <p><strong>Lokasi:</strong> Jombang, Jawa Timur</p>
+      </div>
+      <a href="https://wa.me/+6285807253990" class="mt-6 px-6 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">
+        Hubungi Saya
+      </a>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class=" opacity-0 transition-opacity duration-1000 text-center py-6 bg-[#0a1a2f] text-white">
+      <p>&copy; 2025 Maskyy Dev. All rights reserved.</p>
+    </footer>
+
+    <!-- Script efek salju -->
+    <script>
+      // Scroll otomatis ke elemen foto saat reload
+      window.addEventListener('load', () => {
+        const foto = document.getElementById('foto');
+        if (foto) {
+          foto.scrollIntoView({ behavior: 'auto' }); // Gunakan 'smooth' jika ingin animasi
+        }
+      });
+
+
+      const snowContainer = document.getElementById('snow');
+      function createSnowflake() {
+        const flake = document.createElement('div');
+        flake.className = 'snowflake';
+        const size = Math.random() * 5 + 2 + 'px';
+        flake.style.width = size;
+        flake.style.height = size;
+        flake.style.left = Math.random() * 100 + 'vw';
+        flake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        snowContainer.appendChild(flake);
+        setTimeout(() => flake.remove(), 5000);
+      }
+      setInterval(createSnowflake, 200);
+    </script>
+
+    <!-- Script: efek tampil/sembunyi -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__fadeInDown');
+            entry.target.classList.remove('opacity-0');
+          } else {
+            entry.target.classList.remove('animate__fadeInDown');
+            entry.target.classList.add('opacity-0');
+          }
+        });
+      }, { threshold: 0.3 });
+
+      document.querySelectorAll('.fade-observe').forEach(el => {
+        el.classList.add('animate__animated', 'opacity-0');
+        observer.observe(el);
+      });
+    </script>
+
+    <!-- Zoom saat klik foto -->
+    <script>
+      const foto = document.getElementById('foto');
+      foto.addEventListener('click', () => {
+        foto.classList.toggle('zoomed');
+      });
+
+      window.addEventListener('scroll', () => {
+        const footer = document.getElementById('footer');
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+          footer.classList.remove('hidden');
+          footer.classList.add('opacity-100');
+        } else {
+          footer.classList.add('hidden');
+          footer.classList.remove('opacity-100');
+        }
+      });
+
+      function showImage(img) {
+        document.getElementById('modalImage').src = img.src;
+        document.getElementById('imageModal').classList.remove('hidden');
+      }
+
+      function hideImage() {
+        document.getElementById('imageModal').classList.add('hidden');
+      }
+
+      // Optional: Close when clicked outside the image
+      document.getElementById('imageModal').addEventListener('click', function (e) {
+        if (e.target.id === 'imageModal') hideImage();
+      });
+    </script>
+  </body>
+</html>
